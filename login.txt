@@ -1,0 +1,77 @@
+//
+//  login.c
+//  Basics
+//
+//  Created by Eirik Hanasand on 01/10/2022.
+//
+//
+
+#include <stdio.h>              //  printf, scanf
+#include <ctype.h>              //  toupper
+#include <stdbool.h>            //  bool
+#include <string.h>             //
+
+const int STRLEN = 40; ///< Max. tekstlengde.
+const int MAXBRUKERE = 20; ///< Max. antall brukere.
+const int ASCIINRFORST = 33; ///< F¯rste lovlige ASCII-nr som brukes.
+const int ASCIINRSIST = 126; ///< Siste lovlige ASCII-nr som brukes.
+const int MOD = (ASCIINRSIST-ASCIINRFORST)-1;
+const int CIPHER = 42; //42 men endret til 4///< Antall h¯yre-skift ved kryptering.
+
+/**
+*Hovedprogrammet
+*/
+int main() {
+char sjekkbrukerNavn[STRLEN]; //Variabel for Â eventuelt kontrollere brukernavn
+char brukerNavn[MAXBRUKERE][STRLEN]; // 2-dim array for brukernavnene.
+char sjekkbrukerPass[STRLEN]; //Variabel for Â kontrollere passord f¯r det krypteres
+char brukerPass[MAXBRUKERE][STRLEN]; // 2-dim array for passordene.
+int antBrukere = 0; // Antall brukere registrert hittil.
+int brukernr; //Brukes for Â lagre i til denne i
+
+//variabler for kontroll av hvert tegn i brukernavn og passord
+int asciiverdi;
+char asciitegn[STRLEN];
+
+//Variabler for kontroll av om passord inneholder, tall, tegn, stor+liten bokstav
+bool storOk = 0, litenOk = 0, tallOk = 0, tegnOk = 0, passOk = 0;
+
+char menyvalg;
+int antalltegn;
+    
+    // ============================= COPY PASTE INN I CASE L =============================
+    
+    printf("\n\tDu valgte Login");
+              printf("\n\tSkriv inn Brukernavn: ");
+	      getchar(); //bruker denne pga skjulte tegn som lager kr¯ll
+              gets(sjekkbrukerNavn);
+              for (int i = 0;  i < antBrukere;  i++)  {
+                    printf("\n\t AntallBrukere %i i = %i", antBrukere, i); //Debug
+                    printf("\n\t Inntastet bruker: %s sjekkes mot %s", sjekkbrukerNavn, brukerNavn[i]); //Debug
+                    printf("\n\t likt brukernavn %i", strcmp(sjekkbrukerNavn, brukerNavn[i])); //Debug
+                if (strcmp(sjekkbrukerNavn,brukerNavn[i]) == 0) printf("\n\n\t Bruker funnet \n\tBruker Nr er %i", i+1), brukernr = i;
+                else if (i == antBrukere) printf("\n\t Bruker ikke funnet");
+                  
+
+    }
+              printf("\n\tSkriv inn Passord: ");
+              gets(sjekkbrukerPass);
+
+              printf("\n\n\t Du skrev inn Brukernavn: %s Passord: %s", sjekkbrukerNavn, sjekkbrukerPass);
+            
+              passOk = 0;
+             for (int i = 0;  i < strlen(sjekkbrukerPass);  i++)  {
+            asciiverdi = sjekkbrukerPass[i];
+            asciiverdi = asciiverdi + CIPHER;
+            if (asciiverdi > ASCIINRSIST) asciiverdi = asciiverdi - MOD ;
+            //asciitegn[0] = asciiverdi;
+                 sjekkbrukerPass[i] = asciiverdi;
+            printf("\t %c", brukerPass[antBrukere][i]);
+            printf("Som gir bokstaven %c",asciitegn[0]);
+        }
+        printf("\n\t Passord du tastet inn ble kryptert til: %s\n", sjekkbrukerPass);
+              if (strcmp(sjekkbrukerPass,brukerPass[antBrukere]) == 0) printf("Passord stemmer. Du er nÂ innlogget");
+              else printf("Passordet stemmer ikke. Det du tastet ble kryptert til %s og passordet er %s", sjekkbrukerPass, brukerPass[antBrukere]);
+    
+    // ============================= COPY PASTE INN I CASE L =============================
+}
