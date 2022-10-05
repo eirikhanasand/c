@@ -5,9 +5,6 @@
 //  Created by Eirik Hanasand on 27/09/2022.
 //
 
-/**
-    This program is a simple ascii encryption method for encrypting passwords
- */
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

@@ -412,59 +412,75 @@ void board(void){
         
         //Logic for X
         for (int i = 0; i <= POS; i++) {
-            if (pos[1] == x && pos[2] == x && pos[3] == x && desiredPosition != 0) {
+            if (pos[1] == x && pos[2] == x && pos[3] == x) {
                 printf("%17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[4] == x && pos[5] == x && pos[6] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[4] == x && pos[5] == x && pos[6] == x) {
                 printf("%17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[7] == x && pos[8] == x && pos[9] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[7] == x && pos[8] == x && pos[9] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[1] == x && pos[4] == x && pos[7] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[1] == x && pos[4] == x && pos[7] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[2] == x && pos[5] == x && pos[8] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[2] == x && pos[5] == x && pos[8] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[3] == x && pos[6] == x && pos[9] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[3] == x && pos[6] == x && pos[9] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[1] == x && pos[5] == x && pos[9] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[1] == x && pos[5] == x && pos[9] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
-            }else if (pos[3] == x && pos[5] == x && pos[7] == x && desiredPosition != 0) {
+                break;
+            }else if (pos[3] == x && pos[5] == x && pos[7] == x) {
                 printf(" %17c won!", x);
                 desiredPosition = 0;
+                break;
             }
         }
         
         //Logic for O
         for (int i = 0; i <= POS; i++) {
-            if (pos[1] == o && pos[2] == o && pos[3] == o && desiredPosition != 0) {
+            if (pos[1] == o && pos[2] == o && pos[3] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[4] == o && pos[5] == o && pos[6] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[4] == o && pos[5] == o && pos[6] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[7] == o && pos[8] == o && pos[9] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[7] == o && pos[8] == o && pos[9] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[1] == o && pos[4] == o && pos[7] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[1] == o && pos[4] == o && pos[7] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[2] == o && pos[5] == o && pos[8] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[2] == o && pos[5] == o && pos[8] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[3] == o && pos[6] == o && pos[9] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[3] == o && pos[6] == o && pos[9] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[1] == o && pos[5] == o && pos[9] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[1] == o && pos[5] == o && pos[9] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
-            }else if (pos[3] == o && pos[5] == o && pos[7] == o && desiredPosition != 0) {
+                break;
+            }else if (pos[3] == o && pos[5] == o && pos[7] == o) {
                 printf(" %17c won!", o);
                 desiredPosition = 0;
+                break;
             }
         }
         
