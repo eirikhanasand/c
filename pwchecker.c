@@ -45,7 +45,9 @@ int main(){
     //Making a variable for the length of the password
     combo = hasupper + haslower + hasdigit + haspunct;
     
-    //Checking if any points equal 0 (this means its not included in the password)
+    /**
+     Checking if any points equal 0 (this means its not included in the password)
+     */
     if(combo < 8){
         printf("Password is only %i/8 characters long.\n", combo);
         return 1;

@@ -17,14 +17,16 @@
 const int MAXNUMBERS = 20;
 int main(){
     
-    int i, temp, swapped;
-    int numbers[MAXNUMBERS];
-    int howMany = 0;
+    int i, temp, swapped;       //Loop temporary and swapped number
+    int numbers[MAXNUMBERS];    //Array for storing the numbers
+    int howMany = 0;            //Howmany numbers were entered
     
     for (int i = 0; i < MAXNUMBERS; i++) {
         numbers[i] = 0;
     }
-    
+    /**
+     Asks the user how many 
+     */
     printf("How many numbers would you like to sort? (max 20)\n");
     scanf("%i", &howMany);
     
@@ -59,6 +61,9 @@ int main(){
         }
     }
     
+    /**
+      Prints the sorted list
+     */
     printf("\nSorted list:\t (%i nums)\n", howMany);
     for(i=0; i < howMany; i++){
         printf("%d\n", numbers[i]);
